@@ -1,0 +1,54 @@
+
+ 
+
+.navbar {
+  font-family: Raleway, Sans-Serif;
+  font-size: 18px !important;
+  color: #404040 !important;
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav .active a {
+  background-color: #404040 !important;
+  color: #fff !important;
+}
+
+.main-container {
+  font-family: Raleway, Sans-Serif;
+  margin-top: 80px;
+  text-align: center;
+}
+
+
+
+/****** Login Styling ******/
+
+.login {
+    font-family: Raleway, Sans-Serif;
+  	margin: 86px auto 0 auto;
+	text-align: center;
+	border: 1px solid #ccc;
+	width: 320px;
+}
+
+.btn {
+  width: 250px;
+	padding: 7px 5px;
+	margin: 2px !important;
+	border: 1px solid #ccc !important;
+}
+
+.btn p {
+	margin: 8px 0 0 0;
+	padding: 0;
+}
+
+.btn > img {
+	float: left;
+	margin-left: 10px
+}
