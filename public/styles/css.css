@@ -1,6 +1,4 @@
 
- 
-
 .navbar {
   font-family: Raleway, Sans-Serif;
   font-size: 18px !important;
@@ -20,32 +18,44 @@
 
 .main-container {
   font-family: Raleway, Sans-Serif;
-  margin-top: 80px;
+  padding-top: 80px;
   text-align: center;
+  background-color: #20b9df !important;
+  color:#fff !important;
 }
 
+.btn-poll {
+  width: 140px;
+  margin: 3px !important;
+}
 
 
 /****** Login Styling ******/
 
 .login {
-    font-family: Raleway, Sans-Serif;
-  	margin: 86px auto 0 auto;
+  font-family: Raleway, Sans-Serif;
+  margin: 86px auto 0 auto;
 	text-align: center;
 	width: 320px;
 }
 
-.btn {
+.login-btn {
   width: 250px;
 	padding: 7px 5px;
 	margin: 2px !important;
 	border: 1px solid #ccc !important;
 }
 
-.btn p {
+.login-btn p:link {
+  color: #404040 !important;
+}
+
+.login-btn p {
 	margin: 8px 0 0 0;
 	padding: 0;
 }
+
+
 
 .btn > img {
 	float: left;

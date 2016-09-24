@@ -28,6 +28,11 @@ module.exports = function(app, passport){
 			req.logout();
 			res.redirect('/welcome');
 		});
+		
+	app.route('/profile')
+	    .get(isLoggedIn, function(req, res){
+	        res.sendFile(path + '/public/profile.html');
+	});
     
     app.route('/api/:id')
         .get(isLoggedIn, function(req, res){
@@ -35,7 +40,7 @@ module.exports = function(app, passport){
         });
     
     app.route('/auth/github')
-		.get(passport.authenticate('github'));
+		.get(passport.authenticate('github', { scope: [ 'email' ] }));
 		
 	app.route('/auth/github/callback')
 		.get(passport.authenticate('github', {
@@ -44,7 +49,7 @@ module.exports = function(app, passport){
 		}));
 		
 	app.get('/auth/facebook',
-        passport.authenticate('facebook'));
+        passport.authenticate('facebook', { scope: 'email'}));
 
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', { 
@@ -55,7 +60,7 @@ module.exports = function(app, passport){
         });
         
     app.route('/auth/google')
-		.get(passport.authenticate('google', { scope: ['profile'] }));
+		.get(passport.authenticate('google', { scope: ['profile', 'email'] }));
 		
 	app.route('/auth/google/callback')
 		.get(passport.authenticate('google', {

@@ -23,16 +23,20 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-               <li><a id="userID" href="#"><span class="glyphicon glyphicon-user" ></span> User_id</a></li>
+               <li><a id="userID" href="/profile"><span class="glyphicon glyphicon-user" ></span> User_id</a></li>
                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
             </ul>
          </div>
       </div>
    </nav>
-   <div class="container-fluid">
-      <div class="main-container">
-         <h1 id='welcome'>Hello!</h1>
-      </div>
+   <div class="jumbotron main-container container-fluid">
+      
+         <h1 id='welcome'><br />PollVote</h1>
+         <p>What do you want to see?</p><br />
+         <a href='/polls' class= "btn btn-danger btn-poll">All Polls</a>
+         <a href='/mypolls' class ="btn btn-success btn-poll">My Polls</a>
+         <a href='/newpoll' class = "btn btn-warning btn-poll">New Poll</a>
+      
    </div>
    
    <script type="text/javascript" src="front/ajax.js"></script>
