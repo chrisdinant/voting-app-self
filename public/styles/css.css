@@ -1,3 +1,7 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
 
 .navbar {
   font-family: Raleway, Sans-Serif;
@@ -20,7 +24,7 @@
   font-family: Raleway, Sans-Serif;
   padding-top: 80px;
   text-align: center;
-  background-color: #20b9df !important;
+  background-color: #404040 !important;
   color:#fff !important;
 }
 
@@ -34,9 +38,23 @@
 
 .login {
   font-family: Raleway, Sans-Serif;
-  margin: 86px auto 0 auto;
+  margin: 80px auto 100px auto;
 	text-align: center;
-	width: 320px;
+	width: 100%;
+	height: 300px;
+	/*border: 1px solid;
+  border-color: #404040;
+  border-radius: 5px;*/
+}
+
+
+
+.social-cont {
+  
+}
+
+.local-cont {
+ 
 }
 
 .login-btn {
@@ -44,6 +62,8 @@
 	padding: 7px 5px;
 	margin: 2px !important;
 	border: 1px solid #ccc !important;
+	background-color: #fff;
+	
 }
 
 .login-btn p:link {
@@ -55,9 +75,30 @@
 	padding: 0;
 }
 
-
-
 .btn > img {
 	float: left;
 	margin-left: 10px
+}
+
+
+/****** Profile Styling ******/
+
+
+.profile-details {
+  font-family: Raleway, sans-serif;
+  margin: 0px auto 20px auto;
+  text-align: left !important;
+  padding: 10px;
+  width: 250px;
+  color: ¤404040;
+  border: 1px solid #404040;
+  border-radius: 3px;
+}
+
+.home-btn {
+  margin: auto;
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  
 }

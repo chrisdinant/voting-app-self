@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var path = process.cwd();
 var routes = require(path + '/routes/routes.js');
 var app = express();
@@ -19,6 +20,7 @@ db.once('open', function() {
 app.use('/public', express.static(path + '/public'));
 app.use("/public/styles", express.static(path + "/public/styles"));
 app.use('/front', express.static(path + '/javascripts/front'));
+app.use(bodyParser());
 
 app.use(session({
 	secret: 'secretVote',

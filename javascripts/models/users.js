@@ -4,13 +4,34 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var User = new Schema({
-	login: {
+	user:{
+		name: String,
 		email: String,
-	    via: String,
-	    id: String,
-	    name: String,
-	    polls: Number
-	}
+		polls: Number
+	},
+	local: {
+		email: String,
+	    password: String,
+	},
+	facebook: {
+		email: String,
+		token: String,
+		name: String,
+		id: String
+	},
+	github: {
+		email: String,
+		name: String,
+		token: String,
+		id: String,
+	},
+	google: {
+		name: String,
+		token: String,
+		email: String,
+		id: String
+	},
+
 });
 
 module.exports = mongoose.model('User', User);
