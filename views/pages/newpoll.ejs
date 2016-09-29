@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+<div class='jumbotron main-container'>
+   <h1>New Poll</h1>
+   <div class='row poll-setup'>
+      <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+	<form action="/pollupload" method='post' id="pollForm">
+        Question:<br>
+   <input class="pollInput" type="text" name="question" value="What phone do you use?"><br>
+        Options:<br>
+   <input class="pollInput" type="text" name="option" value="iPhone 6"><br>
+   <input class="pollInput" type='text' name='option' value='iPhone 6S'><br>
+   </div>
+   </div>
+   <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+   <button type="button" title="add more options" id="add-option" class="add-option">+</button>
+   <button type="button" title="remove option" id="remove-option" class="remove-option">-</button>
+   </div>
+   <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+   <button type="submit" class="btn btn-default btn-lg">Submit</button>
+   <button type="reset" class="btn btn-default btn-lg">Reset</button>
+   </div>
+   </form>
+	
+	</div>
+	</main>
+   <script type="text/javascript" src="front/newpoll.js"></script>   
+   <script type="text/javascript" src="front/ajax.js"></script>
+</body>
+</html>

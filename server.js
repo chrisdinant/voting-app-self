@@ -17,10 +17,14 @@ db.once('open', function() {
   console.log('connected to mongo');
 });
 
+app.set('view engine', 'ejs');
+
 app.use('/public', express.static(path + '/public'));
 app.use("/public/styles", express.static(path + "/public/styles"));
 app.use('/front', express.static(path + '/javascripts/front'));
 app.use(bodyParser());
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
 	secret: 'secretVote',

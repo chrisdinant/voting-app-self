@@ -26,6 +26,7 @@ body {
   text-align: center;
   background-color: #404040 !important;
   color:#fff !important;
+  overflow: hidden;
 }
 
 .btn-poll {
@@ -101,4 +102,38 @@ body {
   width: 200px;
   text-align: center;
   
+}
+
+/************New Poll Styling************/
+
+.poll-setup {
+  font-size: 18px;
+  text-align:left;
+}
+
+.add-option {
+  background-color: #404040;
+  border: none;
+  text-decoration: none;
+  font-size: 28px;
+  float:left;
+  outline:0;
+}
+
+.remove-option {
+  display: none;
+  background-color: #404040;
+  border: none;
+  text-decoration: none;
+  font-size: 28px;
+  float:right;
+  outline:0;
+}
+
+
+input[name=question], input[name=option]{
+  margin: 5px;
+  padding: 6px 12px;
+  color: #404040;
+  width: 100%;
 }

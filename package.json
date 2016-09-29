@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/chrisdinant/voting-app-self#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
@@ -33,6 +34,7 @@
     "passport-linkedin": "^1.0.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
+    "ejs": "^1.0.0",
     "request": "^2.75.0"
   }
 }
