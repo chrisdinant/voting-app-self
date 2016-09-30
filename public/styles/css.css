@@ -137,3 +137,31 @@ input[name=question], input[name=option]{
   color: #404040;
   width: 100%;
 }
+
+/*******ShowPoll*********/
+.optionlist li{
+  float: left;
+  width: 50%;
+  font-size: 20px;
+}
+.optionlist {
+  list-style-type: none;
+}
+
+.votes {
+  text-align: right;
+}
+
+.showpollcont {
+  font-family: Raleway, sans-serif;
+}
+
+.question {
+  text-align: center;
+}
+
+.vote-form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}

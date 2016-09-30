@@ -81,7 +81,13 @@ module.exports = function(app, passport){
 	});
 	
 	app.get('/polls', function(req, res){
-		res.render('pages/polllist');
+		Poll.find({}, function(err, pollArr){
+			if(err) throw err;
+			
+			res.render('pages/polllist', {
+				pollArr: pollArr
+			});
+		});
 	});
 	
 	app.get('/polls/:query', function(req, res){
@@ -96,10 +102,18 @@ module.exports = function(app, passport){
 					question: question,
 					options: options
 				});
-				
 			}
 		});
 		
+	});
+	
+	app.route('/votes')
+		.post(isLoggedIn, function(req, res){
+		Poll.update({"poll.question": decodeURIComponent(req.body.question) + '?', 'poll.options.body' : req.body.option}, 
+		{$inc: {'poll.options.$.votes': 1}}, function(err, poll){
+			if(err) throw err;
+			res.send('updated');
+		});
 	});
     
     app.route('/api/:id')

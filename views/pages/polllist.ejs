@@ -21,12 +21,16 @@
    </div>
    
    <div id="pollDiv">
-       <a href='/polls/What phone do you use' class="btn btn-default">poll</a>
-       <p>poll will show up here</p>
+       <ul>
+           <% pollArr.forEach(function(poll){ %>
+           <li><a href = '/polls/<%= poll.poll.question %>' class = "btn btn-default"> <%= poll.poll.question %></a> </li> 
+           <% }); %>
+       </ul>
+       
    </div>
    
    </main>
-   <script type="text/javascript" src="front/pollsList.js"></script>
+   
    <script type="text/javascript" src="front/ajax.js"></script>
 </body>
 </html>
