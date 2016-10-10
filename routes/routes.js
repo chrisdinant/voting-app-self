@@ -10,12 +10,6 @@ module.exports = function(app, passport, flash) {
 			res.redirect('/');
 		}
 	}
-	app.get('/test', function(req, res) {
-    	req.flash('successMessage', 'You are successfully using req-flash');
-    	req.flash('errorMessage', 'No errors, you\'re doing fine');
- 
-    	res.redirect('/');
-	});
 	
     app.route('/')
         .get(function(req, res){
