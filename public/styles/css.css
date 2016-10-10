@@ -1,6 +1,7 @@
-body {
+body * {
   padding: 0px;
   margin: 0px;
+  font-family: Raleway, sans-serif;
 }
 
 .navbar {
@@ -22,7 +23,7 @@ body {
 
 .main-container {
   font-family: Raleway, Sans-Serif;
-  padding-top: 80px;
+  padding-top: 70px;
   text-align: center;
   background-color: #404040 !important;
   color:#fff !important;
@@ -32,6 +33,15 @@ body {
 .btn-poll {
   width: 140px;
   margin: 3px !important;
+}
+
+/*********Pollist*******/
+.pollDiv {
+  font-size: 24px;
+}
+
+.hide {
+  display: none ;
 }
 
 
@@ -49,14 +59,6 @@ body {
 }
 
 
-
-.social-cont {
-  
-}
-
-.local-cont {
- 
-}
 
 .login-btn {
   width: 250px;
@@ -143,17 +145,30 @@ input[name=question], input[name=option]{
   float: left;
   width: 50%;
   font-size: 20px;
+  overflow: hidden;
+  height: 30px;
 }
+
+.radiolist li {
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.radiolist {
+  list-style-type: none;
+}
+
+#addOptionDiv {
+  list-style-type: none;
+}
+
 .optionlist {
   list-style-type: none;
+  margin-left: 5px;
 }
 
 .votes {
   text-align: right;
-}
-
-.showpollcont {
-  font-family: Raleway, sans-serif;
 }
 
 .question {
@@ -164,4 +179,16 @@ input[name=question], input[name=option]{
   margin: 0;
   padding: 0;
   display: inline;
+}
+
+input[name="submitButton"] {
+  width: 100px;
+  padding: 3px;
+  margin: 5px;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.empty-column {
+  color: #fff;
 }

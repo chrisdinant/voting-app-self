@@ -10,16 +10,25 @@
 </header>
 
 <main>
-<div class="jumbotron main-container">
-      
-         <h1 id='welcome'><br />PollVote</h1>
-         <p>What do you want to see?</p><br />
-         <a href='/polls' class= "btn btn-danger btn-poll">All Polls</a>
-         <a href='/mypolls' class ="btn btn-success btn-poll">My Polls</a>
-         <a href='/newpoll' class = "btn btn-warning btn-poll">New Poll</a>
-      
+<% include ../partials/maincontainer %>
+   
+   <div class="row">
+       <div class="col-md-8 col-md-offset-3">
+       
+       <ul class="optionlist">
+           <% pollArr.forEach(function(poll){  %>
+               
+                <li><a href = '/polls/<%= poll.poll.question %>' > <%= poll.poll.question %></li></a>
+              
+                <li> by: <%= poll.poll.user %> </li>
+           
+            
+           <% }); %>
+       </ul>
+       
    </div>
-</main> 
+   </div>
+   </main>
    
    <script type="text/javascript" src="front/ajax.js"></script>
 </body>

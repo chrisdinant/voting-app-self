@@ -6,6 +6,7 @@ var app = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
+var flash = require('express-flash');
 
 require('dotenv').load();
 require('./javascripts/config/passport')(passport);
@@ -32,6 +33,8 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -39,6 +42,6 @@ routes(app, passport);
 
 
 var port = Number(process.env.PORT || 8080);
-app.listen(port, function(){
-    console.log("check");
+app.listen(port, function() {
+    console.log("check, port: " + port);
 });

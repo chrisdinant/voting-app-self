@@ -11,6 +11,7 @@ var User = new Schema({
 		polls: Number
 	},
 	local: {
+		name: String,
 		email: String,
 	    password: String,
 	},

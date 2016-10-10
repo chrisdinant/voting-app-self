@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+</head>
+
+<body>
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+<% include ../partials/maincontainer %>
+
+<div class= "row showpollcont"> 
+<div class="col-xs-11 col-md-5 col-md-offset-1">
+
+<h1 class="question"><%= question %></h1>
+<h3 class="question">by <%= pollUser %></h3><br />
+
+
+
+<ul class ="optionlist">
+    <% options.forEach(function(option){ %>
+        <li><%= option.body %></li>  
+   
+        <li class="votes"><%= option.votes %></li>   
+        <% }); %>
+  
+    
+    <li class="empty-column">empty column</li><li class="votes" id="totalVotes"></li>
+</ul>
+
+
+
+</div>
+<div class="col-xs-12 col-md-4 col-md-offset-1">
+    <canvas id="myChart" width="100" height="70"></canvas>
+</div>
+
+</div> 
+
+</main> 
+    <script>var options = <%- JSON.stringify(options) %>;</script>
+   <script type="text/javascript" src = "../front/polldata.js"></script>
+   <script type="text/javascript" src="../front/ajax.js"></script>
+   
+   
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+<div class="jumbotron main-container">
+      
+         <h1 id='welcome'><br />PollVote</h1>
+         <p class="subtitle">Please login if you want to create a new poll</p><br />
+         <div id="main-btns" class="hide">
+         <a href='/' class ="btn btn-danger btn-poll">All Polls</a>
+         <a href='/newpoll' class = "btn btn-warning btn-poll">New Poll</a>
+         </div> 
+   </div>
+   
+   <div class="row">
+       <div class="col-md-6 col-md-offset-4">
+       
+       <ul class="optionlist">
+           <% pollArr.forEach(function(poll, index){ %>
+           <li><a href = '/polldata/<%= poll.poll.question %>' > <%= poll.poll.question %></li></a>
+           <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://fcc-voting-self-major9.c9users.io/polls/<%=poll.poll.question%>" target="_blank">
+            <img src="/public/img/fbshare.jpg" alt="facebook share"  height="25px" alt="Share on Facebook">
+            </a>
+            <a name="<%= poll.poll.question %>" class ="delbtn" id="delbtn <%= index %>">delete</a></li>
+           
+           <% }); %>
+           <form id="deldiv" action = "/delpoll" method="post" class="col-md-2 col-md-offset-6 hide">
+           Are you sure? <button id = "delyes" name="question">Yes</button><button id="delno">No</button>
+           </form>
+       </ul>
+   </div>    
+   </div>
+       
+   
+   </main>
+   <script type="text/javascript" src = "../front/mypoll.js"></script>
+   <script type="text/javascript" src="front/ajax.js"></script>
+</body>
+</html>
