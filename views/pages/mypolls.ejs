@@ -26,7 +26,7 @@
        <ul class="optionlist">
            <% pollArr.forEach(function(poll, index){ %>
            <li><a href = '/polldata/<%= poll.poll.question %>' > <%= poll.poll.question %></li></a>
-           <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://fcc-voting-self-major9.c9users.io/polls/<%=poll.poll.question%>" target="_blank">
+           <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://pollvote.herokuapp.com/polls/<%=poll.poll.question%>" target="_blank">
             <img src="/public/img/fbshare.jpg" alt="facebook share"  height="25px" alt="Share on Facebook">
             </a>
             <a name="<%= poll.poll.question %>" class ="delbtn" id="delbtn <%= index %>">delete</a></li>
