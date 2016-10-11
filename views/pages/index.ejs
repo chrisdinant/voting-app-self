@@ -13,15 +13,15 @@
 <% include ../partials/maincontainer %>
    
    <div class="row">
-       <div class="col-md-10 col-md-offset-3">
+       <div class="col-md-8 col-md-offset-3">
        
        <ul class="optionlist">
            <% pollArr.forEach(function(poll, index){  %>
                
                 <li><a href = '/polls/<%= poll.poll.question %>' > <%= poll.poll.question %></li></a>
               
-                <li> by: <%= poll.poll.user %>  </li>
-            <a href = '/polldata/<%= poll.poll.question %>' class="hide btn btn-default <%= poll.poll.user %>">Results</a>
+                <li> by: <%= poll.poll.user %>  <a href = '/polldata/<%= poll.poll.question %>' class="hide btn btn-default <%= poll.poll.user.replace(/\s+/g, '') %>">Results</a></li>
+            
            <% }); %>
        </ul>
        

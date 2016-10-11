@@ -14,7 +14,7 @@ $(document).ready(function(){
             
             $("#main-btns").toggleClass("hide");
             $("#addOptionDiv").toggleClass("hide");
-            $('a').filter('.' + data.name).toggleClass("hide");
+            $('a').filter('.' + data.name.replace(/\s+/g, '')).toggleClass("hide");
         } 
     });
 });

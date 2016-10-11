@@ -13,7 +13,6 @@ module.exports = function(app, passport, flash) {
 	
     app.route('/')
         .get(function(req, res){
-        	
         	req.session.returnTo = req.path;
 			Poll.find({}, function(err, pollArr){
 				if(err) throw err;
@@ -22,6 +21,7 @@ module.exports = function(app, passport, flash) {
 				if(req.isAuthenticated()){
 					username = req.user.user.name;
 				}
+				console.log(pollArr[0]);
 				res.render('pages/index', {
 					pollArr: pollArr,
 					username: username
