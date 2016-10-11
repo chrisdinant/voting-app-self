@@ -20,8 +20,8 @@
                
                 <li><a href = '/polls/<%= poll.poll.question %>' > <%= poll.poll.question %></li></a>
               
-                <li> by: <%= poll.poll.user %> <a href = '/polldata/<%= poll.poll.question %>' class="hide btn btn-default <%= poll.poll.user %>">Results</a> </li>
-            
+                <li> by: <%= poll.poll.user %>  </li>
+            <a href = '/polldata/<%= poll.poll.question %>' class="hide btn btn-default <%= poll.poll.user %>">Results</a>
            <% }); %>
        </ul>
        
