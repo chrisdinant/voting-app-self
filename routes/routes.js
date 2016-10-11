@@ -13,13 +13,18 @@ module.exports = function(app, passport, flash) {
 	
     app.route('/')
         .get(function(req, res){
-        	//console.log(req.sessionID);
+        	
         	req.session.returnTo = req.path;
 			Poll.find({}, function(err, pollArr){
 				if(err) throw err;
-				//res.send(req.flash());
+				
+				var username = "";
+				if(req.isAuthenticated()){
+					username = req.user.user.name;
+				}
 				res.render('pages/index', {
-					pollArr: pollArr
+					pollArr: pollArr,
+					username: username
 				});
 			});
 		});
@@ -116,28 +121,20 @@ module.exports = function(app, passport, flash) {
 	
 	app.get('/polls/:query', function(req, res){
 		
-		var username = "";
-		if(req.isAuthenticated()){
-			username = req.user.user.name;
-		}
 		req.session.returnTo = req.path;
 		Poll.findOne({'poll.question': req.params.query + '?'}, function(err, poll){
 			if(err) throw err;
-			console.log(req.user);
 			if(poll) {
 				var question = poll.poll.question;
 				var options = poll.poll.options;
 				var pollUser = poll.poll.user;
 				
-				if(username === pollUser){
-					res.redirect('/polldata/' + req.params.query + '?');
-				} else{
 				res.render('pages/showpoll', {
 					question: question,
 					options: options,
 					pollUser: pollUser
 				});
-				}
+				
 			}
 		});
 		
